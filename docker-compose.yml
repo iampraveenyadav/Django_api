@@ -1,0 +1,19 @@
+   version: '3'
+
+   services:
+     localhost:
+       image: mysql
+       restart: always
+       environment:
+         MYSQL_DATABASE: 'world'
+         MYSQL_USER: 'root'
+         MYSQL_PASSWORD: 'root'
+     web:
+       build: .
+       command: python manage.py runserver 0.0.0.0:8000
+       volumes:
+         - .:/code
+       ports:
+         - "8000:8000"
+       depends_on:
+         - localhost

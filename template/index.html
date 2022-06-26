@@ -1,0 +1,55 @@
+<!-- Write HTML code here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TableView - Startup</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<h2 class="text-center"><u>Summary District</u></h2><br>			
+<table class="table table-light table-striped">
+	<thead>
+	<tr>
+		<th>Name of District</th>
+		<th>TOTAL_APPLICATIONS</th>
+		<th>Approved</th>
+		<th>Pending</th>
+		<th>Reject</th>
+		<th>census_2011</th>
+		<th>Services_Delivery_Per_1000_Population</th>
+		<th>Services_Delivery_Per_10000_Population</th>
+		<th>Services_Delivery_Per_100000_Population</th>
+		
+	</tr>
+	</thead>
+	<tbody>
+	<!-- jinja2 Technique -->
+	{% if d %}
+	{% for i in d %}
+	<tr>
+		<td>{{i.name_of_districts}}</td>
+		<td>{{i.total_applications}}</td>
+		<td>{{i.approved}}</td>
+		<td>{{i.pending}}</td>
+		<td>{{i.rjected}}</td>
+		<td>{{i.census_2011}}</td>
+		<td>{{i.services_delivery_per_1000_population}}</td>
+		<td>{{i.services_delivery_per_10000_population}}</td>
+		<td>{{i.services_delivery_per_100000_population}}</td>
+		
+	</tr>
+	{% endfor %}
+	{% endif %}
+	</tbody>
+</table>
+</div>
+
+</body>
+</html>
